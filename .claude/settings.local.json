@@ -3,7 +3,16 @@
     "allow": [
       "Bash(npm create:*)",
       "Bash(curl:*)",
-      "Bash(bash)"
+      "Bash(bash)",
+      "Bash(npm run build:*)",
+      "Bash(node:*)",
+      "Bash(nvm install:*)",
+      "Bash(nvm use:*)",
+      "Bash(nvm list:*)",
+      "Bash(brew:*)",
+      "Bash(aws s3 sync:*)",
+      "Bash(aws s3 cp:*)",
+      "Bash(aws cloudfront get-distribution:*)"
     ]
   }
 }

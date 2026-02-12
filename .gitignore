@@ -25,3 +25,8 @@ dist-ssr
 
 # Old static site
 old-static-site/
+
+# AWS deployment files
+bucket-policy.json
+cloudfront-config.json
+.aws/
