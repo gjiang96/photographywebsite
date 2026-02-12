@@ -23,7 +23,7 @@
 
 <style scoped>
 .section-favourites {
-  padding: 3rem 0 0;
+  padding: 3rem 0 3rem;
   text-align: center;
   background: var(--lavender);
 }

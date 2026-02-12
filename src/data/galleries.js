@@ -1,41 +1,46 @@
+// Dynamically import all images from public/images using Vite's glob import
+// This automatically discovers all .jpg and .JPG files at build time
+const imageModules = import.meta.glob('/public/images/**/*.{jpg,JPG,jpeg,JPEG}', {
+  eager: true,
+  query: '?url',
+  import: 'default'
+})
+
 export const galleries = {
-  landscape: {
-    title: 'Landscape',
-    count: 10,
-    extensions: {},
-  },
-  portrait: {
-    title: 'Portrait',
-    count: 14,
-    extensions: { 2: 'JPG', 6: 'JPG', 9: 'JPG' },
-  },
-  film: {
-    title: 'Film',
-    count: 8,
-    extensions: {},
-  },
-  animal: {
-    title: 'Animal',
-    count: 10,
-    extensions: {},
-  },
-  abstract: {
-    title: 'Abstract',
-    count: 0,
-    extensions: {},
-  },
+  landscape: { title: 'Landscape' },
+  portrait: { title: 'Portrait' },
+  film: { title: 'Film' },
+  animal: { title: 'Animal' },
+  abstract: { title: 'Abstract' },
 }
 
 export function getGalleryImages(category) {
   const gallery = galleries[category]
-  if (!gallery || gallery.count === 0) return []
+  if (!gallery) return []
 
-  return Array.from({ length: gallery.count }, (_, i) => {
-    const num = i + 1
-    const ext = gallery.extensions[num] || 'jpg'
-    return {
-      src: `/images/${category}/${num}.${ext}`,
-      alt: `${gallery.title} photo ${num}`,
+  // Filter images for this category and extract image info
+  const images = []
+  const basePath = `/public/images/${category}/`
+
+  for (const [path, url] of Object.entries(imageModules)) {
+    if (path.startsWith(basePath)) {
+      // Extract filename and number (e.g., "1.jpg" -> 1)
+      const filename = path.replace(basePath, '')
+      const match = filename.match(/^(\d+)\.(jpg|JPG|jpeg|JPEG)$/)
+
+      if (match) {
+        const num = parseInt(match[1], 10)
+        images.push({
+          num,
+          src: path.replace('/public', ''), // Remove /public prefix for actual URL
+          alt: `${gallery.title} photo ${num}`,
+        })
+      }
     }
-  })
+  }
+
+  // Sort by number
+  images.sort((a, b) => a.num - b.num)
+
+  return images
 }
