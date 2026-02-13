@@ -22,7 +22,7 @@
       <div class="contact-panel-form">
         <ContactForm
           variant="standard"
-          :show-newsletter="true"
+          :show-newsletter="false"
           submit-text="Submit"
         />
       </div>
