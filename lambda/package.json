@@ -1,0 +1,23 @@
+{
+  "name": "contact-form-handler",
+  "version": "1.0.0",
+  "description": "AWS Lambda function for gjphotos.com contact form",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "deploy": "npm run package && npm run upload",
+    "package": "zip -r function.zip index.mjs",
+    "upload": "aws lambda update-function-code --function-name ContactFormHandler --region us-east-1 --zip-file fileb://function.zip",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lambda",
+    "ses",
+    "contact-form"
+  ],
+  "author": "Gary Jiang",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-ses": "^3.0.0"
+  }
+}
