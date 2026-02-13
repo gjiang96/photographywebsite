@@ -6,11 +6,14 @@
           v-for="(image, index) in images"
           :key="index"
           class="gallery-item"
-          :class="{ portrait: portraitFlags[index] }"
+          :class="{ portrait: portraitFlags[index], loaded: loadedFlags[index] }"
         >
+          <div class="image-placeholder" v-if="!loadedFlags[index]"></div>
           <img
             :src="image.src"
             :alt="image.alt"
+            loading="lazy"
+            decoding="async"
             @load="onImageLoad($event, index)"
           >
         </div>
@@ -31,12 +34,14 @@ defineProps({
 })
 
 const portraitFlags = reactive({})
+const loadedFlags = reactive({})
 
 function onImageLoad(event, index) {
   const img = event.target
   if (img.naturalHeight > img.naturalWidth) {
     portraitFlags[index] = true
   }
+  loadedFlags[index] = true
 }
 </script>
 
@@ -57,10 +62,28 @@ function onImageLoad(event, index) {
 .gallery-item {
   overflow: hidden;
   border-radius: 2px;
+  position: relative;
+  background: var(--beige);
 }
 
 .gallery-item.portrait {
   grid-row: span 2;
+}
+
+.image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(110deg, var(--beige) 8%, #f0e8dc 18%, var(--beige) 33%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
 }
 
 .gallery-item img {
@@ -68,10 +91,15 @@ function onImageLoad(event, index) {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.4s ease;
 }
 
-.gallery-item:hover img {
+.gallery-item.loaded img {
+  opacity: 1;
+}
+
+.gallery-item.loaded:hover img {
   transform: scale(1.02);
 }
 

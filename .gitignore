@@ -30,3 +30,4 @@ old-static-site/
 bucket-policy.json
 cloudfront-config.json
 .aws/
+public/images_original_backup/
