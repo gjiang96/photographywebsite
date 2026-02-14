@@ -5,7 +5,7 @@ AWS Lambda function that handles contact form submissions from gjphotos.com.
 ## Architecture
 
 - **Function Name:** `ContactFormHandler`
-- **Runtime:** Node.js 20.x
+- **Runtime:** Node.js 22.x
 - **Region:** us-east-1
 - **Trigger:** API Gateway (or Function URL)
 
@@ -145,8 +145,29 @@ aws logs tail /aws/lambda/ContactFormHandler --follow --region us-east-1
 - Verify IAM role has SES permissions
 - Ensure all required fields are included in request body
 
+## Runtime Updates
+
+When AWS deprecates a Node.js runtime, update it:
+
+```bash
+# Update to latest runtime
+./update-runtime.sh nodejs22.x
+
+# Or manually
+aws lambda update-function-configuration \
+  --function-name ContactFormHandler \
+  --region us-east-1 \
+  --runtime nodejs22.x
+```
+
+**Node.js Runtime Lifecycle:**
+- Check AWS Lambda runtime support: https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html
+- Upgrade before deprecation to avoid service interruptions
+
 ## Files
 
 - `index.mjs` - Main Lambda handler
 - `package.json` - Dependencies and deployment scripts
+- `deploy.sh` - Quick deployment script
+- `update-runtime.sh` - Runtime version updater
 - `function.zip` - Generated deployment package (gitignored)
