@@ -3,7 +3,7 @@
 const imageModules = import.meta.glob('/public/images/**/*.{jpg,JPG,jpeg,JPEG}', {
   eager: true,
   query: '?url',
-  import: 'default'
+  import: 'default',
 })
 
 export const galleries = {
@@ -22,7 +22,7 @@ export function getGalleryImages(category) {
   const images = []
   const basePath = `/public/images/${category}/`
 
-  for (const [path, url] of Object.entries(imageModules)) {
+  for (const [path] of Object.entries(imageModules)) {
     if (path.startsWith(basePath)) {
       // Extract filename and number (e.g., "1.jpg" -> 1)
       const filename = path.replace(basePath, '')

@@ -16,7 +16,7 @@ const routes = [
     path: '/gallery/:category',
     name: 'gallery',
     component: GalleryView,
-    beforeEnter: (to) => {
+    beforeEnter: to => {
       if (!galleries[to.params.category]) {
         return { name: 'home' }
       }
@@ -49,7 +49,7 @@ const router = createRouter({
   },
 })
 
-router.beforeEach((to) => {
+router.beforeEach(to => {
   if (to.meta.title) {
     document.title = to.meta.title
   } else if (to.name === 'gallery' && galleries[to.params.category]) {

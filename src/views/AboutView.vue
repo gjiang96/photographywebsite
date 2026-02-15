@@ -3,12 +3,23 @@
     <div class="about-layout">
       <div class="about-text">
         <h1>About Me</h1>
-        <p>My journey into photography began with a realization: most of my life lived only in my head, with no physical or digital medium to bring those moments back. This sparked a mission to document the world around me—preserving the present so my future self can revisit the past.</p>
-        <p>When I'm not behind the lens, you'll find me climbing (indoors and out), on the badminton court, gaming, or hunting for the motivation to finish a good book.</p>
-        <p>If my work resonates with you, let's connect. I'd love to help you capture the experiences and emotions you want to hold onto.</p>
+        <p>
+          My journey into photography began with a realization: most of my life lived only in my
+          head, with no physical or digital medium to bring those moments back. This sparked a
+          mission to document the world around me—preserving the present so my future self can
+          revisit the past.
+        </p>
+        <p>
+          When I'm not behind the lens, you'll find me climbing (indoors and out), on the badminton
+          court, gaming, or hunting for the motivation to finish a good book.
+        </p>
+        <p>
+          If my work resonates with you, let's connect. I'd love to help you capture the experiences
+          and emotions you want to hold onto.
+        </p>
       </div>
       <div class="about-image">
-        <img src="/images/about/profile.jpg" alt="Gary Jiang">
+        <img src="/images/about/profile.jpg" alt="Gary Jiang" />
       </div>
     </div>
   </section>
@@ -17,14 +28,13 @@
     <div class="contact-panel-layout">
       <div class="contact-panel-text">
         <h2>Contact us</h2>
-        <p>Interested in working together? Fill out some info and we will be in touch shortly. We can't wait to hear from you!</p>
+        <p>
+          Interested in working together? Fill out some info and we will be in touch shortly. We
+          can't wait to hear from you!
+        </p>
       </div>
       <div class="contact-panel-form">
-        <ContactForm
-          variant="standard"
-          :show-newsletter="false"
-          submit-text="Submit"
-        />
+        <ContactForm variant="standard" :show-newsletter="false" submit-text="Submit" />
       </div>
     </div>
   </section>

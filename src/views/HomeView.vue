@@ -3,21 +3,25 @@
     <h2>My Favourite Works</h2>
     <div class="favourites-grid">
       <router-link to="/gallery/portrait">
-        <img src="/images/home/favourite-1.jpg" alt="Portrait photography">
+        <img src="/images/home/favourite-1.jpg" alt="Portrait photography" />
       </router-link>
       <router-link to="/gallery/landscape">
-        <img src="/images/home/favourite-2.jpg" alt="Landscape photography">
+        <img src="/images/home/favourite-2.jpg" alt="Landscape photography" />
       </router-link>
       <router-link to="/gallery/animal">
-        <img src="/images/home/favourite-3.jpg" alt="Animal photography">
+        <img src="/images/home/favourite-3.jpg" alt="Animal photography" />
       </router-link>
     </div>
   </section>
 
   <section class="section-connect">
     <h2>Lets Connect</h2>
-    <p>Let me know what it is <strong><u>you</u></strong> want to create, and we can work together to make it a <strong><u>reality</u></strong>.</p>
-    <router-link to="/contact" class="btn-primary">Get in touch</router-link>
+    <p>
+      Let me know what it is <strong><u>you</u></strong> want to create, and we can work together to
+      make it a <strong><u>reality</u></strong
+      >.
+    </p>
+    <router-link to="/contact" class="btn-primary"> Get in touch </router-link>
   </section>
 </template>
 

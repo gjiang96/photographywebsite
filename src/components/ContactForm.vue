@@ -17,24 +17,29 @@
     <div class="form-row">
       <div class="form-group">
         <label>First Name <span class="required">(required)</span></label>
-        <input type="text" v-model="formData.first_name" required :disabled="isSubmitting">
+        <input v-model="formData.first_name" type="text" required :disabled="isSubmitting" />
       </div>
       <div class="form-group">
         <label>Last Name <span class="required">(required)</span></label>
-        <input type="text" v-model="formData.last_name" required :disabled="isSubmitting">
+        <input v-model="formData.last_name" type="text" required :disabled="isSubmitting" />
       </div>
     </div>
     <div class="form-group">
       <label>Email <span class="required">(required)</span></label>
-      <input type="email" v-model="formData.email" required :disabled="isSubmitting">
+      <input v-model="formData.email" type="email" required :disabled="isSubmitting" />
     </div>
     <div v-if="showNewsletter" class="form-checkbox">
-      <input type="checkbox" id="newsletter" v-model="formData.newsletter" :disabled="isSubmitting">
+      <input
+        id="newsletter"
+        v-model="formData.newsletter"
+        type="checkbox"
+        :disabled="isSubmitting"
+      />
       <label for="newsletter">Sign up for news and updates</label>
     </div>
     <div class="form-group">
       <label>Message <span class="required">(required)</span></label>
-      <textarea v-model="formData.message" required :disabled="isSubmitting"></textarea>
+      <textarea v-model="formData.message" required :disabled="isSubmitting" />
     </div>
     <button type="submit" class="btn-submit" :disabled="isSubmitting">
       {{ isSubmitting ? 'Sending...' : submitText }}
@@ -49,7 +54,7 @@ defineProps({
   variant: {
     type: String,
     default: 'standard',
-    validator: (val) => ['standard', 'underline'].includes(val),
+    validator: val => ['standard', 'underline'].includes(val),
   },
   showNewsletter: {
     type: Boolean,
@@ -104,8 +109,7 @@ async function handleSubmit() {
     } else {
       errorMessage.value = data.error || 'Failed to send message. Please try again.'
     }
-  } catch (error) {
-    console.error('Error submitting form:', error)
+  } catch {
     errorMessage.value = 'An error occurred. Please try again later.'
   } finally {
     isSubmitting.value = false
@@ -162,8 +166,8 @@ async function handleSubmit() {
   gap: 1rem;
 }
 
-.form-group input[type="text"],
-.form-group input[type="email"],
+.form-group input[type='text'],
+.form-group input[type='email'],
 .form-group textarea {
   width: 100%;
   padding: 0.7rem 0.5rem;
@@ -188,8 +192,8 @@ async function handleSubmit() {
 }
 
 /* Underline variant */
-.form-underline .form-group input[type="text"],
-.form-underline .form-group input[type="email"],
+.form-underline .form-group input[type='text'],
+.form-underline .form-group input[type='email'],
 .form-underline .form-group textarea {
   border: none;
   border-bottom: 1.5px solid var(--brown-dark);
@@ -205,7 +209,7 @@ async function handleSubmit() {
   margin-bottom: 1.5rem;
 }
 
-.form-checkbox input[type="checkbox"] {
+.form-checkbox input[type='checkbox'] {
   accent-color: var(--brown-dark);
 }
 

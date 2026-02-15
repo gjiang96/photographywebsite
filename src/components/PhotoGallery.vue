@@ -8,14 +8,14 @@
           class="gallery-item"
           :class="{ portrait: portraitFlags[index], loaded: loadedFlags[index] }"
         >
-          <div class="image-placeholder" v-if="!loadedFlags[index]"></div>
+          <div v-if="!loadedFlags[index]" class="image-placeholder" />
           <img
             :src="image.src"
             :alt="image.alt"
             loading="lazy"
             decoding="async"
             @load="onImageLoad($event, index)"
-          >
+          />
         </div>
       </template>
       <p v-else class="coming-soon">Coming soon</p>
@@ -82,8 +82,12 @@ function onImageLoad(event, index) {
 }
 
 @keyframes shimmer {
-  0% { background-position: 100% 0; }
-  100% { background-position: -100% 0; }
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
 }
 
 .gallery-item img {
@@ -92,7 +96,9 @@ function onImageLoad(event, index) {
   object-fit: cover;
   display: block;
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.4s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.4s ease;
 }
 
 .gallery-item.loaded img {

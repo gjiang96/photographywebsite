@@ -1,7 +1,7 @@
 <template>
   <header class="site-header">
     <div class="site-logo">
-      <router-link to="/">Gary Jiang Photography</router-link>
+      <router-link to="/"> Gary Jiang Photography </router-link>
     </div>
     <button
       class="mobile-menu-toggle"
@@ -9,13 +9,9 @@
       aria-label="Toggle menu"
       @click="toggleMenu"
     >
-      <span></span><span></span><span></span>
+      <span /><span /><span />
     </button>
-    <div
-      class="mobile-overlay"
-      :class="{ active: menuOpen }"
-      @click="closeMenu"
-    ></div>
+    <div class="mobile-overlay" :class="{ active: menuOpen }" @click="closeMenu" />
     <nav class="site-nav" :class="{ open: menuOpen }">
       <div class="nav-dropdown" :class="{ open: dropdownOpen }">
         <button
@@ -26,15 +22,15 @@
           Photography <span class="chevron">&#9662;</span>
         </button>
         <div class="nav-dropdown-menu">
-          <router-link to="/gallery/landscape" @click="closeMenu">Landscape</router-link>
-          <router-link to="/gallery/portrait" @click="closeMenu">Portrait</router-link>
-          <router-link to="/gallery/film" @click="closeMenu">Film</router-link>
-          <router-link to="/gallery/animal" @click="closeMenu">Animal</router-link>
-          <router-link to="/gallery/abstract" @click="closeMenu">Abstract</router-link>
+          <router-link to="/gallery/landscape" @click="closeMenu"> Landscape </router-link>
+          <router-link to="/gallery/portrait" @click="closeMenu"> Portrait </router-link>
+          <router-link to="/gallery/film" @click="closeMenu"> Film </router-link>
+          <router-link to="/gallery/animal" @click="closeMenu"> Animal </router-link>
+          <router-link to="/gallery/abstract" @click="closeMenu"> Abstract </router-link>
         </div>
       </div>
-      <router-link to="/about" active-class="active" @click="closeMenu">About</router-link>
-      <router-link to="/contact" active-class="active" @click="closeMenu">Contact</router-link>
+      <router-link to="/about" active-class="active" @click="closeMenu"> About </router-link>
+      <router-link to="/contact" active-class="active" @click="closeMenu"> Contact </router-link>
     </nav>
   </header>
 </template>
@@ -159,7 +155,9 @@ function toggleDropdown(e) {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s, visibility 0.2s;
+  transition:
+    opacity 0.2s,
+    visibility 0.2s;
   text-align: center;
 }
 

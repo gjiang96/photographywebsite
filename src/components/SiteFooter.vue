@@ -2,11 +2,25 @@
   <footer class="site-footer">
     <div class="footer-logo">Gary Jiang Photography</div>
     <div class="footer-social">
-      <a href="https://www.instagram.com/garythefastsnail/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-          <circle cx="12" cy="12" r="5"/>
-          <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+      <a
+        href="https://www.instagram.com/garythefastsnail/"
+        target="_blank"
+        rel="noopener"
+        aria-label="Instagram"
+      >
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+          <circle cx="12" cy="12" r="5" />
+          <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
         </svg>
       </a>
     </div>

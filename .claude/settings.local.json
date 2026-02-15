@@ -14,7 +14,8 @@
       "Bash(aws s3 cp:*)",
       "Bash(aws cloudfront get-distribution:*)",
       "Bash(dig:*)",
-      "Bash(aws acm describe-certificate:*)"
+      "Bash(aws acm describe-certificate:*)",
+      "Bash(npm install:*)"
     ]
   }
 }
