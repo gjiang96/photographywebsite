@@ -30,6 +30,7 @@
         </div>
       </div>
       <router-link to="/about" active-class="active" @click="closeMenu"> About </router-link>
+      <router-link to="/blogs" active-class="active" @click="closeMenu"> Blogs </router-link>
       <router-link to="/contact" active-class="active" @click="closeMenu"> Contact </router-link>
     </nav>
   </header>
