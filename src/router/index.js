@@ -3,7 +3,10 @@ import HomeView from '../views/HomeView.vue'
 import GalleryView from '../views/GalleryView.vue'
 import AboutView from '../views/AboutView.vue'
 import ContactView from '../views/ContactView.vue'
+import BlogsView from '../views/BlogsView.vue'
+import BlogPostView from '../views/BlogPostView.vue'
 import { galleries } from '../data/galleries.js'
+import { blogs } from '../data/blogs.js'
 
 const routes = [
   {
@@ -36,6 +39,23 @@ const routes = [
     meta: { title: 'Contact — Gary Jiang Photography' },
   },
   {
+    path: '/blogs',
+    name: 'blogs',
+    component: BlogsView,
+    meta: { title: 'Blogs — Gary Jiang Photography' },
+  },
+  {
+    path: '/blogs/:slug',
+    name: 'blog-post',
+    component: BlogPostView,
+    beforeEnter: to => {
+      if (!blogs.find(b => b.slug === to.params.slug)) {
+        return { name: 'blogs' }
+      }
+    },
+    meta: { titleSuffix: 'Gary Jiang Photography' },
+  },
+  {
     path: '/:pathMatch(.*)*',
     redirect: '/',
   },
@@ -54,6 +74,9 @@ router.beforeEach(to => {
     document.title = to.meta.title
   } else if (to.name === 'gallery' && galleries[to.params.category]) {
     document.title = `${galleries[to.params.category].title} — Gary Jiang Photography`
+  } else if (to.name === 'blog-post') {
+    const blog = blogs.find(b => b.slug === to.params.slug)
+    if (blog) document.title = `${blog.title} — Gary Jiang Photography`
   }
 })
 
