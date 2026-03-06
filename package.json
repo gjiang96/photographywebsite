@@ -9,9 +9,9 @@
     "preview": "vite preview",
     "optimize-images": "./optimize-images.sh",
     "lint": "eslint . --fix",
-    "format": "prettier --write \"src/**/*.{js,vue,css}\"",
+    "format": "prettier --write \"src/**/*.{js,vue,css,md}\"",
     "lint:check": "eslint .",
-    "format:check": "prettier --check \"src/**/*.{js,vue,css}\"",
+    "format:check": "prettier --check \"src/**/*.{js,vue,css,md}\"",
     "prepare": "husky"
   },
   "lint-staged": {
