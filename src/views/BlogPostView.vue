@@ -23,7 +23,7 @@
 
       <!-- Rendered markdown (content is from trusted local .md files, not user input) -->
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="markdown-body" v-html="renderedContent" />
+      <div ref="markdownEl" class="markdown-body" v-html="renderedContent" />
     </article>
 
     <!-- Mobile: floating TOC button (appears after scrolling past static TOC) -->
@@ -79,6 +79,13 @@
     <p>Post not found.</p>
     <router-link to="/blogs">Back to Blogs</router-link>
   </div>
+
+  <ImageLightbox
+    :is-open="lightboxOpen"
+    :src="lightboxSrc"
+    :alt="lightboxAlt"
+    @close="lightboxOpen = false"
+  />
 </template>
 
 <script setup>
@@ -86,6 +93,7 @@ import { ref, computed, watch, onUnmounted, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
 import { marked } from 'marked'
 import { blogs } from '../data/blogs.js'
+import ImageLightbox from '../components/ImageLightbox.vue'
 
 // Dynamically import markdown content
 const markdownModules = import.meta.glob('../content/blogs/*.md', {
@@ -158,6 +166,9 @@ function formatDate(dateStr) {
   })
 }
 
+// Extra breathing room so the heading isn't flush against the sticky header
+const SCROLL_GAP_PX = 16
+
 function scrollToSection(id, closeDrawer = false) {
   const el = document.getElementById(id)
   if (el) {
@@ -168,20 +179,18 @@ function scrollToSection(id, closeDrawer = false) {
   if (closeDrawer) drawerOpen.value = false
 }
 
-// --- Mobile TOC ---
+// --- TOC state ---
 
-// Extra breathing room so the heading isn't flush against the sticky header
-const SCROLL_GAP_PX = 16
+const markdownEl = ref(null)
+const tocEl = ref(null)
+const tocInView = ref(true)
+const drawerOpen = ref(false)
+const activeId = ref('')
 
 // Detection band for the active heading: a ~5% window near the top of the viewport.
 // Format: top right bottom left (like CSS margin).
 // -15% pushes the top edge down, -80% shrinks from the bottom — leaving a narrow band.
 const ACTIVE_HEADING_ROOT_MARGIN = '-15% 0px -80% 0px'
-
-const tocEl = ref(null)
-const tocInView = ref(true)
-const drawerOpen = ref(false)
-const activeId = ref('')
 
 let tocObserver = null
 let headingObserver = null
@@ -211,16 +220,42 @@ function setupHeadingObserver() {
   headings.forEach(h => headingObserver.observe(h))
 }
 
+// --- Lightbox ---
+
+const lightboxOpen = ref(false)
+const lightboxSrc = ref('')
+const lightboxAlt = ref('')
+let imgListeners = []
+
+function attachImageListeners() {
+  imgListeners.forEach(({ el, handler }) => el.removeEventListener('click', handler))
+  imgListeners = []
+  if (!markdownEl.value) return
+  markdownEl.value.querySelectorAll('img').forEach(img => {
+    const handler = () => {
+      lightboxSrc.value = img.src.replace('/web/', '/original/')
+      lightboxAlt.value = img.alt
+      lightboxOpen.value = true
+    }
+    img.style.cursor = 'pointer'
+    img.addEventListener('click', handler)
+    imgListeners.push({ el: img, handler })
+  })
+}
+
+// Re-run all DOM-dependent setup whenever the rendered markdown changes
 watch(renderedContent, async () => {
   await nextTick()
   tocObserver?.disconnect()
   setupTocObserver()
   setupHeadingObserver()
+  attachImageListeners()
 })
 
 onUnmounted(() => {
   tocObserver?.disconnect()
   headingObserver?.disconnect()
+  imgListeners.forEach(({ el, handler }) => el.removeEventListener('click', handler))
 })
 </script>
 
