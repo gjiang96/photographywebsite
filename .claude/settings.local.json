@@ -17,7 +17,11 @@
       "Bash(aws acm describe-certificate:*)",
       "Bash(npm install:*)",
       "Bash(python3:*)",
-      "Bash(pip3 install:*)"
+      "Bash(pip3 install:*)",
+      "WebFetch(domain:web.dev)",
+      "WebFetch(domain:css-tricks.com)",
+      "WebFetch(domain:dev.to)",
+      "WebFetch(domain:www.smashingmagazine.com)"
     ]
   }
 }
