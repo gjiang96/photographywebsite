@@ -154,7 +154,7 @@ worry-free, just like how first loves are.
 
 ### Sunset during sunrise
 
-![Sunset during sunrise](/images/blog/first-love/sunset-during-sunrise.jpg)
+![Sunset during sunrise](/images/blog/first-love/web/sunset-during-sunrise.jpg)
 
 This photo was taken sometime after sunrise, but I wanted to make it look and feel like a sunset. In
 a way, a first love feels exciting like a sunrise, which leads to the start of a new day and looking
@@ -166,7 +166,7 @@ regret, sadness, and a realization that it's gone forever.
 
 ### Numero Uno Bench
 
-![Numero Uno Bench](/images/blog/first-love/numero-uno-bench.jpg)
+![Numero Uno Bench](/images/blog/first-love/web/numero-uno-bench.jpg)
 
 The bench was something I randomly stumbled upon. It was in a park, and I felt it fit perfectly with
 what I wanted to capture: the words and the lonesome bench. Life is full of little coincidences and
@@ -175,7 +175,7 @@ pondering what we could have. Sometimes we should just take a seat and enjoy the
 
 ### Unbridgeable Finite Distance
 
-![Unbridgeable Finite Distance](/images/blog/first-love/unbridgeable-finite-distance.jpg)
+![Unbridgeable Finite Distance](/images/blog/first-love/web/unbridgeable-finite-distance.jpg)
 
 Often, happiness feels like it's right within our grasp. We reach out wanting to feel the warmth and
 the safety it provides, but sometimes that last step we want to take seems like an uncrossable
@@ -189,8 +189,8 @@ of trying to bridge the unbridgeable gap.
 ### Time has passed
 
 <div style="display:flex;gap:0.75rem;margin:1.5rem 0;">
-  <img src="/images/blog/first-love/time-has-passed-past.jpg" alt="Time has passed past" style="width:50%;margin:0;" />
-  <img src="/images/blog/first-love/time-has-passed.jpg" alt="Time has passed" style="width:50%;margin:0;" />
+  <img src="/images/blog/first-love/web/time-has-passed-past.jpg" alt="Time has passed past" style="width:50%;margin:0;" />
+  <img src="/images/blog/first-love/web/time-has-passed.jpg" alt="Time has passed" style="width:50%;margin:0;" />
 </div>
 
 Within Utada's song, there is a constant cycle of hope and despair, and while trapped in this cycle,
@@ -202,7 +202,7 @@ heartbreak, loss, and sorrow but still believe in each other and the hope of tom
 
 ### Transition
 
-![Bridge](/images/blog/first-love/bridge.jpg)
+![Bridge](/images/blog/first-love/web/bridge.jpg)
 
 In Japanese culture, the bridge symbolizes the transitional journey from our physical plane to a
 higher spiritual one. With that in mind, I hoped to capture that transition through our physical

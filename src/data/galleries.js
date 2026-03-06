@@ -1,6 +1,5 @@
-// Dynamically import all images from public/images using Vite's glob import
-// This automatically discovers all .jpg and .JPG files at build time
-const imageModules = import.meta.glob('/public/images/**/*.{jpg,JPG,jpeg,JPEG}', {
+// Dynamically import web-optimised gallery images (web/ subfolder only)
+const imageModules = import.meta.glob('/public/images/*/web/*.{jpg,JPG,jpeg,JPEG}', {
   eager: true,
   query: '?url',
   import: 'default',
@@ -20,7 +19,7 @@ export function getGalleryImages(category) {
 
   // Filter images for this category and extract image info
   const images = []
-  const basePath = `/public/images/${category}/`
+  const basePath = `/public/images/${category}/web/`
 
   for (const [path] of Object.entries(imageModules)) {
     if (path.startsWith(basePath)) {

@@ -7,6 +7,7 @@
           :key="index"
           class="gallery-item"
           :class="{ portrait: portraitFlags[index], loaded: loadedFlags[index] }"
+          @click="openLightbox(image)"
         >
           <div v-if="!loadedFlags[index]" class="image-placeholder" />
           <img
@@ -21,10 +22,18 @@
       <p v-else class="coming-soon">Coming soon</p>
     </div>
   </section>
+
+  <ImageLightbox
+    :is-open="lightboxOpen"
+    :src="lightboxSrc"
+    :alt="lightboxAlt"
+    @close="lightboxOpen = false"
+  />
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { ref, reactive } from 'vue'
+import ImageLightbox from './ImageLightbox.vue'
 
 defineProps({
   images: {
@@ -32,6 +41,16 @@ defineProps({
     required: true,
   },
 })
+
+const lightboxOpen = ref(false)
+const lightboxSrc = ref('')
+const lightboxAlt = ref('')
+
+function openLightbox(image) {
+  lightboxSrc.value = image.src.replace('/web/', '/original/')
+  lightboxAlt.value = image.alt
+  lightboxOpen.value = true
+}
 
 const portraitFlags = reactive({})
 const loadedFlags = reactive({})
@@ -64,6 +83,7 @@ function onImageLoad(event, index) {
   border-radius: 2px;
   position: relative;
   background: var(--beige);
+  cursor: pointer;
 }
 
 .gallery-item.portrait {
