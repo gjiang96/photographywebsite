@@ -12,6 +12,8 @@ export default [
         document: 'readonly',
         console: 'readonly',
         fetch: 'readonly',
+        IntersectionObserver: 'readonly',
+        MutationObserver: 'readonly',
       },
     },
     rules: {
