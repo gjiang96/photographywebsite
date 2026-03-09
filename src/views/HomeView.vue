@@ -35,7 +35,6 @@
 .section-favourites h2 {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-style: italic;
   font-size: 2.2rem;
   color: var(--brown-dark);
   margin-bottom: 2rem;
@@ -76,7 +75,6 @@
 .section-connect h2 {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-style: italic;
   font-size: 2.2rem;
   color: var(--brown-dark);
   margin-bottom: 1.5rem;

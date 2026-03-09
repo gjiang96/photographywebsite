@@ -53,7 +53,6 @@ function formatDate(dateStr) {
 .blogs-header h1 {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-style: italic;
   font-size: 2.8rem;
   color: var(--brown-dark);
   margin-bottom: 0.75rem;
@@ -117,7 +116,6 @@ function formatDate(dateStr) {
 .blog-card-title {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-style: italic;
   font-size: 1.7rem;
   color: var(--brown-dark);
   line-height: 1.3;

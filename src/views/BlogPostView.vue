@@ -301,7 +301,6 @@ onUnmounted(() => {
 
 .toc-title {
   font-family: var(--font-heading);
-  font-style: italic;
   font-size: 1rem;
   color: var(--brown-dark);
   margin-bottom: 0.75rem;
@@ -406,7 +405,6 @@ onUnmounted(() => {
 
 .toc-drawer-title {
   font-family: var(--font-heading);
-  font-style: italic;
   font-size: 1rem;
   color: var(--brown-dark);
   font-weight: 400;
@@ -505,7 +503,6 @@ onUnmounted(() => {
 .markdown-body h1 {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-style: italic;
   font-size: 2.6rem;
   color: var(--brown-dark);
   margin-bottom: 0.5rem;
@@ -515,7 +512,6 @@ onUnmounted(() => {
 .markdown-body h2 {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-style: italic;
   font-size: 1.7rem;
   color: var(--brown-dark);
   margin-top: 3rem;
@@ -527,7 +523,6 @@ onUnmounted(() => {
 .markdown-body h3 {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-style: italic;
   font-size: 1.2rem;
   color: var(--brown-medium);
   margin-top: 2rem;

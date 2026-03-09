@@ -81,7 +81,6 @@ function toggleDropdown(e) {
   font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 400;
-  font-style: italic;
   color: var(--brown-dark);
   letter-spacing: 0.02em;
 }

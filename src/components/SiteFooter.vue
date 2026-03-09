@@ -44,7 +44,6 @@
   font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 400;
-  font-style: italic;
   color: var(--brown-dark);
 }
 

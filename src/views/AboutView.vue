@@ -62,7 +62,6 @@ import ContactForm from '../components/ContactForm.vue'
 .about-text h1 {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-style: italic;
   font-size: 2.4rem;
   color: var(--text-dark);
   margin-bottom: 2rem;
@@ -98,7 +97,6 @@ import ContactForm from '../components/ContactForm.vue'
 .contact-panel-text h2 {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-style: italic;
   font-size: 2.2rem;
   color: var(--text-dark);
   margin-bottom: 1.5rem;

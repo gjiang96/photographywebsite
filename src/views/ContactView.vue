@@ -40,7 +40,6 @@ import ContactForm from '../components/ContactForm.vue'
 .contact-info h1 {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-style: italic;
   font-size: 2.4rem;
   color: var(--text-dark);
   margin-bottom: 1.5rem;
