@@ -614,7 +614,7 @@ onUnmounted(() => {
   font-size: 0.9rem;
   line-height: 2;
   color: var(--text-dark);
-  white-space: pre-line;
+  white-space: normal;
 }
 
 /* Images */
