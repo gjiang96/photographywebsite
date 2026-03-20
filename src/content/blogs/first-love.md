@@ -42,8 +42,8 @@ Here's the full translation from
 
 ### Verse 1
 
-> _Saigo no kisu wa_ — Our last kiss _Tabako no nioi ga shita_ — Tasted like cigarettes _Nigakute
-> setsunai kaori_ — A bitter and painful scent
+> _Saigo no kisu wa_ — Our last kiss<br>_Tabako no nioi ga shita_ — Tasted like
+> cigarettes<br>_Nigakute setsunai kaori_ — A bitter and painful scent
 
 In the first verse, she sets the bittersweet mood by evoking a memory of a last kiss and the
 lingering scents and taste that accompany it. In Japanese culture, scent and taste are closely
@@ -54,8 +54,8 @@ people smell cigarettes, it generally evokes the sensation of coughing or a tigh
 
 ### Pre-chorus 1
 
-> _Ashita no imagoro ni wa_ — By this time tomorrow _Anata wa doko ni iru n darou_ — I wonder where
-> you are _Dare wo omotteru n darou_ — I wonder who you're thinking of
+> _Ashita no imagoro ni wa_ — By this time tomorrow<br>_Anata wa doko ni iru n darou_ — I wonder
+> where you are<br>_Dare wo omotteru n darou_ — I wonder who you're thinking of
 
 Here in the first pre-chorus, we can see her wondering about the current state of the other person,
 and if they are in a different place (both emotionally and physically). There's a sense of anxiety
@@ -63,10 +63,10 @@ and uncertainty which will contrast with the second pre-chorus.
 
 ### Chorus
 
-> You are always gonna be my love _Itsu ka dare ka to mata koi ni ochite mo_ — Even if I fall in
-> love with someone else someday I'll remember to love You taught me how You are always gonna be the
-> one _Ima wa mada kanashii love song_ — Right now, it's still a sad love song _Atarashii uta utaeru
-> made_ — Until I can sing a new song
+> You are always gonna be my love<br>_Itsu ka dare ka to mata koi ni ochite mo_ — Even if I fall in
+> love with someone else someday<br>I'll remember to love<br>You taught me how<br>You are always
+> gonna be the one<br>_Ima wa mada kanashii love song_ — Right now, it's still a sad love
+> song<br>_Atarashii uta utaeru made_ — Until I can sing a new song
 
 The chorus is where there are the most transitions between English and Japanese. This allows her to
 express raw emotions without the filtering that exists in Japanese, which is known for its social
@@ -88,8 +88,8 @@ stuck in this sad version of herself, until she can find a new chapter.
 
 ### Verse 2
 
-> _Tachidomaru jikan ga_ — The time that has stopped _Ugokidasou to shite iru_ — Is trying to start
-> moving again _Wasuretakunai koto bakari_ — There are only things I don't want to forget
+> _Tachidomaru jikan ga_ — The time that has stopped<br>_Ugokidasou to shite iru_ — Is trying to
+> start moving again<br>_Wasuretakunai koto bakari_ — There are only things I don't want to forget
 
 This verse, following the chorus, carries a connotation of moving on and finding a new chapter.
 Within the context of Utada herself, this could symbolize her moving from New York to Japan and the
@@ -111,10 +111,10 @@ sounds more like a resigned prophecy that she will not be okay because she knows
 
 ### Bridge
 
-> You will always be inside my heart _Itsumo anata dake no basho ga aru kara_ — Because there will
-> always be a place just for you I hope that I have a place in your heart too Now and forever you
-> are still the one _Ima wa mada kanashii love song_ — Right now, it's still a sad love song
-> _Atarashii uta utaeru made_ — Until I can sing a new song
+> You will always be inside my heart<br>_Itsumo anata dake no basho ga aru kara_ — Because there
+> will always be a place just for you<br>I hope that I have a place in your heart too<br>Now and
+> forever you are still the one<br>_Ima wa mada kanashii love song_ — Right now, it's still a sad
+> love song<br>_Atarashii uta utaeru made_ — Until I can sing a new song
 
 The bridge serves as a turning point in the piece and is intended to provide a different perspective
 from the preceding verses and chorus. Here she grounds the imagery by creating a physical
@@ -124,9 +124,9 @@ heart as well, just as she has made one for them.
 
 ### Chorus 2
 
-> You are always gonna be my love _Itsu ka dare ka to mata koi ni ochite mo_ — Even if I fall in
-> love with someone else someday I'll remember to love You taught me how You are always gonna be the
-> one _Mada kanashii love song_ — Still a sad love song Now and forever...
+> You are always gonna be my love<br>_Itsu ka dare ka to mata koi ni ochite mo_ — Even if I fall in
+> love with someone else someday<br>I'll remember to love<br>You taught me how<br>You are always
+> gonna be the one<br>_Mada kanashii love song_ — Still a sad love song<br>Now and forever...
 
 Chorus 2 is very similar to the first chorus, except the last two lines are different. Instead of
 saying that she will be singing a sad love song until she sings a new one, it's now been replaced
