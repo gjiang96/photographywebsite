@@ -42,7 +42,7 @@ Here's the full translation from
 
 ### Verse 1
 
-> _Saigo no kisu wa_ — Our last kiss _Tabako no kuni ga shita_ — Tasted like cigarettes _Nigakute
+> _Saigo no kisu wa_ — Our last kiss _Tabako no nioi ga shita_ — Tasted like cigarettes _Nigakute
 > setsunai kaori_ — A bitter and painful scent
 
 In the first verse, she sets the bittersweet mood by evoking a memory of a last kiss and the

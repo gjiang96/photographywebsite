@@ -2,7 +2,12 @@
   <div v-if="post" class="blog-post-page">
     <div class="blog-post-header">
       <router-link to="/blogs" class="back-link">← All Blogs</router-link>
-      <time class="blog-post-date">{{ formatDate(post.date) }}</time>
+      <div class="header-right">
+        <button v-if="hasZh" class="lang-toggle" @click="toggleLang">
+          {{ lang === 'en' ? '中文' : 'EN' }}
+        </button>
+        <time class="blog-post-date">{{ formatDate(post.date) }}</time>
+      </div>
     </div>
 
     <article class="blog-post-content">
@@ -103,9 +108,14 @@ const markdownModules = import.meta.glob('../content/blogs/*.md', {
 
 const route = useRoute()
 const rawContent = ref('')
+const lang = ref('en')
+const hasZh = ref(false)
 
 async function loadContent(slug) {
-  const key = `../content/blogs/${slug}.md`
+  const enKey = `../content/blogs/${slug}.md`
+  const zhKey = `../content/blogs/${slug}.zh.md`
+  hasZh.value = !!markdownModules[zhKey]
+  const key = lang.value === 'zh' && markdownModules[zhKey] ? zhKey : enKey
   if (markdownModules[key]) {
     rawContent.value = await markdownModules[key]()
   } else {
@@ -113,8 +123,19 @@ async function loadContent(slug) {
   }
 }
 
+function toggleLang() {
+  lang.value = lang.value === 'en' ? 'zh' : 'en'
+  loadContent(route.params.slug)
+}
+
 loadContent(route.params.slug)
-watch(() => route.params.slug, loadContent)
+watch(
+  () => route.params.slug,
+  slug => {
+    lang.value = 'en'
+    loadContent(slug)
+  }
+)
 
 const post = computed(() => blogs.find(b => b.slug === route.params.slug))
 
@@ -123,7 +144,7 @@ function slugify(text) {
   return text
     .toLowerCase()
     .trim()
-    .replace(/[^\w\s-]/g, '')
+    .replace(/[^\w\s\u4e00-\u9fff-]/g, '')
     .replace(/[\s_]+/g, '-')
     .replace(/^-+|-+$/g, '')
 }
@@ -135,19 +156,26 @@ const toc = computed(() => {
   for (const line of rawContent.value.split('\n')) {
     const h2 = line.match(/^## (.+)/)
     const h3 = line.match(/^### (.+)/)
-    if (h2) items.push({ level: 2, text: h2[1].trim(), id: slugify(h2[1].trim()) })
-    else if (h3) items.push({ level: 3, text: h3[1].trim(), id: slugify(h3[1].trim()) })
+    if (h2) {
+      const text = h2[1].trim()
+      items.push({ level: 2, text, id: slugify(text) })
+    } else if (h3) {
+      const text = h3[1].trim()
+      items.push({ level: 3, text, id: slugify(text) })
+    }
   }
   return items
 })
 
 // Configure marked with custom heading renderer to add IDs
+// text may contain HTML (e.g. <em> from marked inline parsing) — strip tags for the id
 const renderer = new marked.Renderer()
 renderer.heading = function ({ text, depth }) {
   if (depth === 1) {
     return `<h${depth}>${text}</h${depth}>\n`
   }
-  const id = slugify(text)
+  const plainText = text.replace(/<[^>]+>/g, '')
+  const id = slugify(plainText)
   return `<h${depth} id="${id}">${text}</h${depth}>\n`
 }
 
@@ -271,6 +299,32 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 3rem;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lang-toggle {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--brown-light);
+  background: none;
+  border: 1px solid var(--brown-light);
+  border-radius: 3px;
+  padding: 0.2rem 0.55rem;
+  cursor: pointer;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+  font-family: inherit;
+}
+
+.lang-toggle:hover {
+  color: var(--brown-dark);
+  border-color: var(--brown-dark);
 }
 
 .back-link {
