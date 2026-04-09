@@ -1,9 +1,4 @@
-// Dynamically import web-optimised gallery images (web/ subfolder only)
-const imageModules = import.meta.glob('/public/images/*/web/*.{jpg,JPG,jpeg,JPEG}', {
-  eager: true,
-  query: '?url',
-  import: 'default',
-})
+import counts from 'virtual:gallery-counts'
 
 export const galleries = {
   landscape: { title: 'Landscape' },
@@ -15,31 +10,17 @@ export const galleries = {
 
 export function getGalleryImages(category) {
   const gallery = galleries[category]
-  if (!gallery) return []
+  const count = counts[category]
+  if (!gallery || !count) return []
 
-  // Filter images for this category and extract image info
   const images = []
-  const basePath = `/public/images/${category}/web/`
-
-  for (const [path] of Object.entries(imageModules)) {
-    if (path.startsWith(basePath)) {
-      // Extract filename and number (e.g., "1.jpg" -> 1)
-      const filename = path.replace(basePath, '')
-      const match = filename.match(/^(\d+)\.(jpg|JPG|jpeg|JPEG)$/)
-
-      if (match) {
-        const num = parseInt(match[1], 10)
-        images.push({
-          num,
-          src: path.replace('/public', ''), // Remove /public prefix for actual URL
-          alt: `${gallery.title} photo ${num}`,
-        })
-      }
-    }
+  for (let i = count; i >= 1; i--) {
+    images.push({
+      num: i,
+      src: `/images/${category}/web/${i}.jpg`,
+      lightboxSrc: `/images/${category}/original/${i}.jpg`,
+      alt: `${gallery.title} photo ${i}`,
+    })
   }
-
-  // Sort by number descending (newest/highest first)
-  images.sort((a, b) => b.num - a.num)
-
   return images
 }

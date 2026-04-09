@@ -47,7 +47,7 @@ const lightboxSrc = ref('')
 const lightboxAlt = ref('')
 
 function openLightbox(image) {
-  lightboxSrc.value = image.src.replace('/web/', '/original/')
+  lightboxSrc.value = image.lightboxSrc
   lightboxAlt.value = image.alt
   lightboxOpen.value = true
 }
