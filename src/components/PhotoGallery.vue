@@ -66,14 +66,14 @@ function onImageLoad(event, index) {
 
 <style scoped>
 .gallery-section {
-  padding: 2rem 1rem 3rem;
+  padding: 2rem 5rem 3rem;
   background: var(--white);
 }
 
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: calc((100vw - 3rem) / 3);
+  grid-auto-rows: min(calc((100vw - 11rem) / 3), calc((100vh - 9rem) / 2));
   grid-auto-flow: dense;
   gap: 1rem;
 }
@@ -138,6 +138,10 @@ function onImageLoad(event, index) {
 }
 
 @media (max-width: 900px) {
+  .gallery-section {
+    padding: 2rem 1rem 3rem;
+  }
+
   .gallery-grid {
     grid-template-columns: 1fr;
     grid-auto-rows: calc((100vw - 2rem) * 2 / 3);

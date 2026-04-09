@@ -38,8 +38,8 @@ export function getGalleryImages(category) {
     }
   }
 
-  // Sort by number
-  images.sort((a, b) => a.num - b.num)
+  // Sort by number descending (newest/highest first)
+  images.sort((a, b) => b.num - a.num)
 
   return images
 }
