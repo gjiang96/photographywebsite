@@ -22,7 +22,8 @@
       "WebFetch(domain:css-tricks.com)",
       "WebFetch(domain:dev.to)",
       "WebFetch(domain:www.smashingmagazine.com)",
-      "Bash(npm run lint:*)"
+      "Bash(npm run lint:*)",
+      "Bash(git:*)"
     ]
   }
 }
