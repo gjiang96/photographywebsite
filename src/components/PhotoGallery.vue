@@ -73,7 +73,7 @@ function onImageLoad(event, index) {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: min(calc((100vw - 11rem) / 3), calc((100vh - 9rem) / 2));
+  grid-auto-rows: calc((100vw - 11rem) / 3);
   grid-auto-flow: dense;
   gap: 1rem;
 }
