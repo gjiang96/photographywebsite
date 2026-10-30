@@ -10,6 +10,9 @@ The user wants to publish a new blog post. There will be a `.docx` file and a se
 in `src/content/blogs/`. Your job is to walk through every step below in order — do not skip or
 batch steps.
 
+Background on how blogs are stored and rendered (registry, Chinese translations, routing) is in
+`docs/blogs.md`.
+
 ## Step 1 — Discover the source files
 
 List everything in `src/content/blogs/`. Identify:
@@ -54,15 +57,15 @@ themes of the blog (e.g. `those-eyes.jpg`, `stop-and-notice.jpg`, `cherry-blosso
 should be designated the **cover** image. The most visually striking or thematically central photo
 is usually the best cover.
 
-Create the destination directories and copy the photos with their new names:
+Copy each photo with its new name to `public/images/blog/<slug>/original/<name>.jpg`, and copy the
+cover photo there as `cover.jpg` too. Then generate the resized `web/` copies (1200px long edge,
+what the post body loads; the lightbox opens the original):
 
-```
-public/images/blog/<slug>/original/<name>.jpg
-public/images/blog/<slug>/web/<name>.jpg
+```bash
+./optimize-images.sh public/images/blog/<slug>
 ```
 
-Copy each photo to **both** `original/` and `web/`. Also copy the cover photo as `cover.jpg` in both
-directories.
+Do not copy full-size files into `web/` by hand.
 
 ## Step 5 — Ask for the YouTube link
 
