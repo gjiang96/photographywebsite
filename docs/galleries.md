@@ -32,13 +32,22 @@ public/images/
 
 ## Resizing
 
-Make the `web/` copy with macOS `sips` (long edge 2000px, JPEG quality 85):
+`optimize-images.sh` (macOS, uses `sips`) builds every `web/` image from its `original/` sibling.
+Originals are never modified.
+
+| Images    | Web long edge | Quality |
+| --------- | ------------- | ------- |
+| Galleries | 2000px        | 85      |
+| Blogs     | 1200px        | 85      |
+
+Smaller images are copied as-is, never upscaled.
 
 ```bash
-sips -Z 2000 -s format jpeg -s formatOptions 85 original/15.jpg --out web/15.jpg
+./optimize-images.sh public/images/landscape          # only missing/stale web copies
+./optimize-images.sh --force public/images/blog/<slug> # rebuild all of them
 ```
 
-`optimize-images.sh` predates the `web/`/`original/` split: it resizes **every** image under
-`public/images` in place, originals included. Don't run it as-is.
+Without `--force` a web copy is skipped when it's newer than its original. After a fresh clone the
+file times are arbitrary, so pass a folder instead of running it on everything at once.
 
 The `/add-gallery-photos` skill walks through all of this.

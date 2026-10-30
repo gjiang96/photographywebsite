@@ -27,7 +27,7 @@ Single-page Vue 3 app built with Vite. `src/App.vue` is the layout shell: `SiteH
 │   └── assets/styles/main.css # CSS variables, reset, base typography
 ├── lambda/                    # contact form handler (see contact-lambda.md)
 ├── deploy.sh                  # build + S3 sync + CloudFront invalidation
-└── optimize-images.sh         # legacy, see galleries.md before running
+└── optimize-images.sh         # builds web/ images from original/ (see galleries.md)
 ```
 
 ## Routes

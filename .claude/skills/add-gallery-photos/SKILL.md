@@ -31,11 +31,11 @@ formats with `sips -s format jpeg`.
 ## Step 4: Make web copies
 
 ```bash
-sips -Z 2000 -s format jpeg -s formatOptions 85 \
-  public/images/<category>/original/<n>.jpg --out public/images/<category>/web/<n>.jpg
+./optimize-images.sh public/images/<category>
 ```
 
-Never run `optimize-images.sh`; it overwrites originals.
+This writes 2000px `web/<n>.jpg` for any original without an up-to-date web copy. It never modifies
+`original/`.
 
 ## Step 5: Verify
 

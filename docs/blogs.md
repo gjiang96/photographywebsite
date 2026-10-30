@@ -29,6 +29,8 @@ Registry entry shape:
 - `BlogPostView.vue` loads markdown via `import.meta.glob` and renders it with `marked`.
 - If `<slug>.zh.md` exists, an EN/中文 toggle appears; otherwise English only.
 - A slug missing from `blogs.js` redirects to `/blogs`, even if the markdown exists.
+- Posts reference `web/` images (1200px, made by `optimize-images.sh`); clicking one opens the
+  matching `original/` in the lightbox.
 
 ## Post structure
 
