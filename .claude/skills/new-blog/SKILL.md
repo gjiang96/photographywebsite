@@ -10,6 +10,9 @@ The user wants to publish a new blog post. There will be a `.docx` file and a se
 in `src/content/blogs/`. Your job is to walk through every step below in order — do not skip or
 batch steps.
 
+Background on how blogs are stored and rendered (registry, Chinese translations, routing) is in
+`docs/blogs.md`.
+
 ## Step 1 — Discover the source files
 
 List everything in `src/content/blogs/`. Identify:
