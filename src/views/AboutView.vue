@@ -34,7 +34,7 @@
         </p>
       </div>
       <div class="contact-panel-form">
-        <ContactForm variant="standard" :show-newsletter="false" submit-text="Submit" />
+        <ContactForm variant="standard" submit-text="Submit" />
       </div>
     </div>
   </section>

@@ -15,7 +15,7 @@ Prerequisites: `gjphotos.com` verified in SES, with DKIM/SPF/DMARC records in Cl
 ## Request body
 
 ```json
-{ "first_name": "…", "last_name": "…", "email": "…", "message": "…", "newsletter": true }
+{ "first_name": "…", "last_name": "…", "email": "…", "message": "…" }
 ```
 
 ## Deploy
@@ -38,11 +38,22 @@ When AWS deprecates a Node runtime
 lambda/update-runtime.sh nodejs22.x
 ```
 
+## Unit tests
+
+`lambda/index.test.mjs` runs on `node:test` with SES stubbed, so it needs no AWS credentials:
+
+```bash
+cd lambda && npm ci && npm test
+```
+
+CI (`.github/workflows/ci.yml`) runs them, along with lint, format and build, on every pull request
+to `main`.
+
 ## Testing and logs
 
 ```bash
 curl -X POST <API_ENDPOINT> -H "Content-Type: application/json" \
-  -d '{"first_name":"Test","last_name":"User","email":"test@example.com","message":"Test","newsletter":false}'
+  -d '{"first_name":"Test","last_name":"User","email":"test@example.com","message":"Test"}'
 
 aws logs tail /aws/lambda/ContactFormHandler --follow --region us-east-1
 ```
