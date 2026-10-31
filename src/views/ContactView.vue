@@ -7,7 +7,7 @@
         <p><a href="mailto:bowengary@hotmail.com">bowengary@hotmail.com</a></p>
 
         <div class="contact-form-wrapper">
-          <ContactForm variant="underline" :show-newsletter="false" submit-text="Send" />
+          <ContactForm variant="underline" submit-text="Send" />
         </div>
       </div>
       <div class="contact-image">

@@ -28,15 +28,6 @@
       <label>Email <span class="required">(required)</span></label>
       <input v-model="formData.email" type="email" required :disabled="isSubmitting" />
     </div>
-    <div v-if="showNewsletter" class="form-checkbox">
-      <input
-        id="newsletter"
-        v-model="formData.newsletter"
-        type="checkbox"
-        :disabled="isSubmitting"
-      />
-      <label for="newsletter">Sign up for news and updates</label>
-    </div>
     <div class="form-group">
       <label>Message <span class="required">(required)</span></label>
       <textarea v-model="formData.message" required :disabled="isSubmitting" />
@@ -56,10 +47,6 @@ defineProps({
     default: 'standard',
     validator: val => ['standard', 'underline'].includes(val),
   },
-  showNewsletter: {
-    type: Boolean,
-    default: false,
-  },
   submitText: {
     type: String,
     default: 'Submit',
@@ -71,7 +58,6 @@ const formData = ref({
   last_name: '',
   email: '',
   message: '',
-  newsletter: false,
 })
 
 const isSubmitting = ref(false)
@@ -104,7 +90,6 @@ async function handleSubmit() {
         last_name: '',
         email: '',
         message: '',
-        newsletter: false,
       }
     } else {
       errorMessage.value = data.error || 'Failed to send message. Please try again.'
@@ -200,22 +185,6 @@ async function handleSubmit() {
   border-radius: 0;
   padding: 0.7rem 0;
   background: transparent;
-}
-
-.form-checkbox {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.form-checkbox input[type='checkbox'] {
-  accent-color: var(--brown-dark);
-}
-
-.form-checkbox label {
-  font-size: 0.8rem;
-  color: var(--text-body);
 }
 
 .btn-submit:disabled {
