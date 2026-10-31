@@ -46,6 +46,9 @@ lambda/update-runtime.sh nodejs22.x
 cd lambda && npm ci && npm test
 ```
 
+CI (`.github/workflows/ci.yml`) runs them, along with lint, format and build, on every pull request
+to `main`.
+
 ## Testing and logs
 
 ```bash
