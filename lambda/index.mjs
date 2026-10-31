@@ -19,7 +19,7 @@ export const handler = async (event) => {
   try {
     // Parse form data
     const body = JSON.parse(event.body);
-    const { first_name, last_name, email, message, newsletter } = body;
+    const { first_name, last_name, email, message } = body;
 
     // Validate required fields
     if (!first_name || !last_name || !email || !message) {
@@ -52,7 +52,6 @@ Contact Form Submission
 
 From: ${first_name} ${last_name}
 Email: ${email}
-Newsletter: ${newsletter ? 'Yes' : 'No'}
 
 Message:
 ${message}
@@ -87,9 +86,6 @@ Sent from gjphotos.com contact form
       </div>
       <div class="field">
         <span class="label">Email:</span> <a href="mailto:${email}">${email}</a>
-      </div>
-      <div class="field">
-        <span class="label">Newsletter:</span> ${newsletter ? 'Yes' : 'No'}
       </div>
       <div class="field">
         <span class="label">Message:</span>
